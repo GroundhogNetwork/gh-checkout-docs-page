@@ -251,7 +251,7 @@
         <h1 id='introduction'>Introduction</h1>
 <p>Welcome to GroundhogPay! Here, you&#39;ll find all the information you need to integrate with Groundhog.</p>
 
-<p>After following the steps on this page you will be able to guide customers through friction-free checkout, securely accept recurring payments in cryptocurrency, and monitor, as well as maintenance, your customers crypto subscriptions.</p>
+<p>After following the steps on this page you will be able to guide customers through friction-free checkout, securely accept recurring payments in cryptocurrency, and monitor, as well as maintain, your customers crypto subscriptions.</p>
 <h1 id='collecting-recurring-payments-with-groundhog'>Collecting recurring payments with Groundhog</h1>
 <p>Accepting a recurring crypto payment using Groundhog is a two-part process with a client-side and a server-side action.</p>
 <h2 id='client-side-action'>Client-side action</h2>
@@ -275,24 +275,22 @@
 </span><span class="o">&lt;</span><span class="nx">button</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"button-id1"</span><span class="o">&gt;</span><span class="nx">Pay</span> <span class="nx">With</span> <span class="nx">Groundhog</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
 </span><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
   <span class="nx">GroundhogCheckout</span><span class="p">.</span><span class="nx">mount</span><span class="p">({</span>
-    <span class="na">apiKey</span><span class="p">:</span> <span class="s1">'a81bc81b-dead-4e5d-abff-90865d1e13b2'</span><span class="p">,</span>
-    <span class="na">root</span><span class="p">:</span> <span class="s1">'button-id1'</span><span class="p">,</span>
-    <span class="na">subDetails</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">name</span><span class="p">:</span> <span class="s1">'Test'</span><span class="p">,</span>
-      <span class="na">description</span><span class="p">:</span> <span class="s1">'Unified Crypto Exchange API'</span><span class="p">,</span>
-      <span class="na">plan</span><span class="p">:</span> <span class="s1">'Streamer'</span><span class="p">,</span>
-      <span class="na">frequency</span><span class="p">:</span> <span class="s1">'Monthly'</span><span class="p">,</span>
-      <span class="na">startDate</span><span class="p">:</span> <span class="s1">'1-16-2019'</span><span class="p">,</span>
-      <span class="c1">// expiryDate: '1-16-2020',</span>
-      <span class="na">amount</span><span class="p">:</span> <span class="mi">249</span><span class="p">,</span>
-      <span class="na">period</span><span class="p">:</span> <span class="s1">'MONTH'</span><span class="p">,</span>
-      <span class="na">offChainId</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="na">onToken</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">token</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">token</span><span class="p">)</span>
-      <span class="cm">/* Your code here */</span>
-    <span class="p">}</span>
-  <span class="p">});</span>
+    <span class="na">apiKey</span><span class="p">:</span> <span class="s1">'0c312dd0-4b2a-11e9-add3-b71b6de3dfd9'</span><span class="p">,</span>
+        <span class="na">root</span><span class="p">:</span> <span class="s1">'button-id1'</span><span class="p">,</span>
+        <span class="na">subDetails</span><span class="p">:</span> <span class="p">{</span>
+          <span class="na">plan</span><span class="p">:</span> <span class="s1">'Streamer'</span><span class="p">,</span>
+          <span class="na">periodDescription</span><span class="p">:</span> <span class="s1">'Monthly'</span><span class="p">,</span>
+          <span class="na">startDate</span><span class="p">:</span> <span class="s1">'1-16-2019'</span><span class="p">,</span>
+          <span class="c1">// expiryDate: '1-16-2020',</span>
+          <span class="na">amount</span><span class="p">:</span> <span class="mi">249</span><span class="p">,</span>
+          <span class="na">period</span><span class="p">:</span> <span class="s1">'MONTH'</span><span class="p">,</span>
+          <span class="na">unique</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="na">onToken</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">token</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">token</span><span class="p">)</span>
+          <span class="cm">/* Your code here */</span>
+        <span class="p">}</span>
+      <span class="p">});</span>
 <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
 </span><span class="o">&lt;</span><span class="sr">/body</span><span class="err">&gt;
 </span>
@@ -325,24 +323,14 @@
 <td>Holds te details of a subscription that you wish to charge for.</td>
 </tr>
 <tr>
-<td>name</td>
-<td>bool</td>
-<td>Name of the subscription option.</td>
-</tr>
-<tr>
-<td>description</td>
-<td>string</td>
-<td>Description of product or service.</td>
-</tr>
-<tr>
 <td>plan</td>
 <td>string</td>
 <td>Type of plan.</td>
 </tr>
 <tr>
-<td>frequency</td>
-<td>int</td>
-<td>Text representation of how often user is billed.</td>
+<td>periodDescription</td>
+<td>string</td>
+<td>Text representation of billing period.</td>
 </tr>
 <tr>
 <td>startDate</td>
@@ -361,13 +349,13 @@
 </tr>
 <tr>
 <td>period</td>
-<td>int</td>
+<td>string</td>
 <td>How often the user will be billed can be the following values (DAY, WEEK, MONTH, THREE_MONTH, SIX_MONTH, YEAR, TWO_YEAR, THREE_YEAR))</td>
 </tr>
 <tr>
-<td>offChainId</td>
+<td>unique</td>
 <td>int</td>
-<td>This value allows a single account to have more then one subcription, this value needs to be monitored by you.</td>
+<td>This value allows a single account to have more then one subscription, this value needs to be monitored by you.</td>
 </tr>
 </tbody></table>
 
